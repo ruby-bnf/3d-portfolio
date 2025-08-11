@@ -246,7 +246,12 @@ export const myProjects = [
   },
 ];
 
-export const calculateSizes = (isSmall: any, isMobile: any, isTablet: any) => {
+//use to calcualte zise of objects base of screen size
+export const calculateSizes = (
+  isSmall: unknown,
+  isMobile: unknown,
+  isTablet: unknown
+) => {
   return {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
