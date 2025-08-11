@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import pluginTailwindcss from "eslint-plugin-tailwindcss";
 import { defineConfig } from "eslint/config";
+import { ReactThreeFiber } from "@react-three/fiber";
 
 export default defineConfig([
   {
@@ -19,10 +20,12 @@ export default defineConfig([
   {
     plugins: {
       tailwindcss: pluginTailwindcss,
+      "@react-three": ReactThreeFiber,
     },
     rules: {
       "tailwindcss/classnames-order": "off", // Disable class order checks
       "tailwindcss/no-custom-classname": "error", // Enable error for invalid Tailwind classnames
+      "react/no-unkown-property": "off",
     },
     settings: {
       tailwindcss: {
