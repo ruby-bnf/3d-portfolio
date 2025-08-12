@@ -7,6 +7,10 @@ import CanvasLoader from "../components/CanvasLoader";
 import { Leva } from "leva";
 import { calculateSizes } from "../constants";
 import { useMediaQuery } from "react-responsive";
+import Target from "../components/Target";
+import ReactLogo from "../components/ReactLogo";
+import Cube from "../components/Cube";
+import Rings from "../components/Rings";
 
 export const Hero = () => {
   const isSmallDevice = useMediaQuery({ maxWidth: 440 });
@@ -38,6 +42,12 @@ export const Hero = () => {
               rotation={[0, -Math.PI, 0]}
               scale={sizes.deskScale}
             />
+            <group>
+              <Target position={sizes.targetPosition} />
+              <ReactLogo position={sizes.reactLogoPosition} />
+              <Cube position={sizes.cubePosition} />
+              <Rings position={sizes.ringPosition} />
+            </group>
 
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
